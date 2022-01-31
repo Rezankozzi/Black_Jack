@@ -11,6 +11,7 @@ class Dealer < Player
     else
       take_a_card(game.card_deck)
     end
+    game.too_match_points(name) if counting_cards > 21
     game.bankrupt << name if money.zero?
   end
 

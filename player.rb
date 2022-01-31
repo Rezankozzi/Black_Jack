@@ -2,7 +2,7 @@
 
 class Player
   attr_reader :name, :my_cards
-  attr_accessor :money, :game_over
+  attr_accessor :money, :game_over, :skip
 
   def initialize(name)
     @name = name
@@ -23,11 +23,13 @@ class Player
 
   def stand
     puts "#{name} skip turn!"
+    self.skip = 1
   end
 
   def reset_attr
     my_cards.clear
     self.game_over = nil
+    self.skip = 0
   end
 
   def win(game)

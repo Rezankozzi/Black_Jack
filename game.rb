@@ -104,6 +104,7 @@ class Game
 
   def stand(player)
     player.stand
+
   end
 
   def take_card(player)
